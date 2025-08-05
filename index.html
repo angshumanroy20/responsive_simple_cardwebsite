@@ -5,75 +5,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Webpage Demo</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      body {
-        background: radial-gradient(circle, rgb(139, 48, 48), rgb(12, 53, 114));
-      }
-    </style>
   </head>
-  <body class="min-h-screen flex flex-col gap-10 text-white">
+  <body class="bg-gradient-to-br from-[#4B1D3F] via-[#1D2951] to-[#0C1A2B] text-white font-sans">
 
-    <!-- Carousel -->
-    <div class="relative w-full h-[270px] overflow-hidden">
+    <!-- Navbar -->
+    <nav class="flex items-center justify-between px-8 py-4 bg-black bg-opacity-30 backdrop-blur-md fixed w-full z-50">
+      <div class="text-2xl font-bold tracking-wide text-white">CodeSpace</div>
+      <ul class="hidden md:flex space-x-6 text-white text-md font-medium">
+        <li><a href="#" class="hover:text-blue-400 transition">Home</a></li>
+        <li><a href="#" class="hover:text-blue-400 transition">Courses</a></li>
+        <li><a href="#" class="hover:text-blue-400 transition">Blog</a></li>
+        <li><a href="#" class="hover:text-blue-400 transition">Contact</a></li>
+      </ul>
+      <button class="hidden md:block px-4 py-2 bg-blue-600 rounded-md hover:bg-blue-700 transition">Get Started</button>
+    </nav>
+
+    <!-- Carousel with overlay text -->
+    <div class="relative mt-16 w-full h-[320px] overflow-hidden">
       <div class="carousel flex transition-all duration-700 ease-in-out" id="carousel">
-        <img src="./images/anders-jilden-cYrMQA7a3Wc-unsplash.jpg" class="w-full h-[270px] object-cover opacity-70" />
-        <img src="./images/jms-kFHz9Xh3PPU-unsplash.jpg" class="w-full h-[270px] object-cover opacity-70" />
-        <img src="./images/dan-freeman-wAn4RfmXtxU-unsplash.jpg" class="w-full h-[270px] object-cover opacity-70" />
+        <div class="relative w-full h-[320px]">
+          <img src="./images/anders-jilden-cYrMQA7a3Wc-unsplash.jpg" class="w-full h-full object-cover brightness-50" />
+          <div class="absolute inset-0 flex items-center justify-center">
+            <h2 class="text-3xl md:text-5xl font-bold text-white text-center px-4">Explore Modern Web Technologies</h2>
+          </div>
+        </div>
+        <div class="relative w-full h-[320px]">
+          <img src="./images/jms-kFHz9Xh3PPU-unsplash.jpg" class="w-full h-full object-cover brightness-50" />
+          <div class="absolute inset-0 flex items-center justify-center">
+            <h2 class="text-3xl md:text-5xl font-bold text-white text-center px-4">Master VS Code & Developer Tools</h2>
+          </div>
+        </div>
+        <div class="relative w-full h-[320px]">
+          <img src="./images/dan-freeman-wAn4RfmXtxU-unsplash.jpg" class="w-full h-full object-cover brightness-50" />
+          <div class="absolute inset-0 flex items-center justify-center">
+            <h2 class="text-3xl md:text-5xl font-bold text-white text-center px-4">Unlock Data Analytics Career Path</h2>
+          </div>
+        </div>
       </div>
-      <!-- Carousel Controls -->
-      <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 text-2xl font-bold bg-black bg-opacity-30 px-3 py-1 rounded hover:bg-opacity-60">
+
+      <!-- Controls -->
+      <button onclick="prevSlide()" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-3xl bg-black bg-opacity-30 px-3 py-1 rounded-full hover:bg-opacity-60">
         &#10094;
       </button>
-      <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 text-2xl font-bold bg-black bg-opacity-30 px-3 py-1 rounded hover:bg-opacity-60">
+      <button onclick="nextSlide()" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-3xl bg-black bg-opacity-30 px-3 py-1 rounded-full hover:bg-opacity-60">
         &#10095;
       </button>
     </div>
 
     <!-- Card Section -->
-    <div class="flex flex-wrap justify-center gap-8 px-4">
-      <!-- Card 1 -->
-      <div class="bg-white text-gray-900 rounded-xl overflow-hidden shadow-lg w-80 transform hover:scale-95 transition duration-300">
-        <img src="./images/What-Is-JavaScript-Used-For.avif" class="h-48 w-full object-cover" />
-        <div class="p-4">
-          <h3 class="text-xl font-semibold mb-2">JAVASCRIPT</h3>
-          <p class="mb-4">100+ Javascript Concepts you need to know</p>
-          <a href="https://youtu.be/lkIFF4maKMU?si=VprVL_x0DCiqsxOg" target="_blank"
-            class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-md">
-            Watch Now
-          </a>
-        </div>
-      </div>
+    <section class="py-16 px-4 md:px-20">
+      <h2 class="text-center text-4xl font-extrabold mb-12 text-blue-300">Top Recommendations</h2>
+      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
 
-      <!-- Card 2 -->
-      <div class="bg-white text-gray-900 rounded-xl overflow-hidden shadow-lg w-80 transform hover:scale-95 transition duration-300">
-        <img src="./images/images.jpeg" class="h-48 w-full object-cover" />
-        <div class="p-4">
-          <h3 class="text-xl font-semibold mb-2">VS CODE</h3>
-          <p class="mb-4">12 VS Code Extensions to INCREASE Productivity 2024</p>
-          <a href="https://youtu.be/1UyQaR8pvjk?si=A0Eze_SD1Lk1x-Jl" target="_blank"
-            class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-md">
-            Watch Now
-          </a>
+        <!-- Card 1 -->
+        <div class="bg-white text-gray-900 w-full max-w-sm rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition">
+          <img src="./images/What-Is-JavaScript-Used-For.avif" class="h-48 w-full object-cover rounded-t-xl" />
+          <div class="p-6">
+            <span class="text-xs font-medium text-purple-600 bg-purple-100 px-2 py-1 rounded-full">JavaScript</span>
+            <h3 class="text-xl font-semibold mt-4">Master JavaScript</h3>
+            <p class="text-gray-600 mt-2">100+ essential JS concepts every developer must know in 2024.</p>
+            <a href="https://youtu.be/lkIFF4maKMU?si=VprVL_x0DCiqsxOg" target="_blank"
+              class="mt-4 inline-block text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md transition">
+              Watch Now
+            </a>
+          </div>
         </div>
-      </div>
 
-      <!-- Card 3 -->
-      <div class="bg-white text-gray-900 rounded-xl overflow-hidden shadow-lg w-80 transform hover:scale-95 transition duration-300">
-        <img src="./images/data.jpeg" class="h-48 w-full object-cover" />
-        <div class="p-4">
-          <h3 class="text-xl font-semibold mb-2">DATA ANALYTICS</h3>
-          <p class="mb-4">Ultimate Data Analyst Bootcamp | SQL, Excel, Tableau and more..</p>
-          <a href="https://youtu.be/wQQR60KtnFY?si=cWC_-dTjhTrVpwv4" target="_blank"
-            class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-md">
-            Watch Now
-          </a>
+        <!-- Card 2 -->
+        <div class="bg-white text-gray-900 w-full max-w-sm rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition">
+          <img src="./images/images.jpeg" class="h-48 w-full object-cover rounded-t-xl" />
+          <div class="p-6">
+            <span class="text-xs font-medium text-indigo-600 bg-indigo-100 px-2 py-1 rounded-full">VS Code</span>
+            <h3 class="text-xl font-semibold mt-4">Boost with Extensions</h3>
+            <p class="text-gray-600 mt-2">Top 12 VS Code extensions that skyrocket productivity in 2024.</p>
+            <a href="https://youtu.be/1UyQaR8pvjk?si=A0Eze_SD1Lk1x-Jl" target="_blank"
+              class="mt-4 inline-block text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-md transition">
+              Watch Now
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white text-gray-900 w-full max-w-sm rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition">
+          <img src="./images/data.jpeg" class="h-48 w-full object-cover rounded-t-xl" />
+          <div class="p-6">
+            <span class="text-xs font-medium text-green-600 bg-green-100 px-2 py-1 rounded-full">Data</span>
+            <h3 class="text-xl font-semibold mt-4">Analytics Bootcamp</h3>
+            <p class="text-gray-600 mt-2">Master Excel, SQL, Tableau, and more for a data-driven career.</p>
+            <a href="https://youtu.be/wQQR60KtnFY?si=cWC_-dTjhTrVpwv4" target="_blank"
+              class="mt-4 inline-block text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded-md transition">
+              Watch Now
+            </a>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="mt-10 text-center bg-purple-700 py-4 text-white text-lg italic font-medium">
-      &copy; Angshuman
+    <footer class="bg-gray-900 text-white py-6 text-center">
+      <p class="text-sm">&copy; 2025 CodeSpace. Crafted with ❤️ by Angshuman</p>
     </footer>
 
     <!-- Carousel Script -->
@@ -97,8 +127,7 @@
         showSlide(index);
       }
 
-      // Auto-slide
-      setInterval(nextSlide, 4000);
+      setInterval(nextSlide, 5000);
     </script>
   </body>
 </html>
